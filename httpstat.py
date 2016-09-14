@@ -200,7 +200,7 @@ def main():
             print(green(p1) + grayscale[14]('/') + cyan(p2))
         else:
             pos = line.find(':')
-            print(grayscale[14](line[:pos + 1]) + cyan(line[pos + 1:]))
+            print(grayscale[14](line[:pos + 1]) + red(line[pos + 1:]))
 
     print()
 
