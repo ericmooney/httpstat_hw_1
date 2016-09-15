@@ -7,6 +7,7 @@
 # http://blog.kenweiner.com/2014/11/http-request-timings-with-curl.html
 
 from __future__ import print_function
+from tabulate import tabulate  # https://pypi.python.org/pypi/tabulate
 
 import os
 import json
@@ -194,14 +195,21 @@ def main():
     # remove header file
     os.remove(headerf.name)
 
+    # Format the table headers
+    table_headers = ['Item', 'Detail']
+    table_rows = []
+
     for loop, line in enumerate(headers.split('\n')):
         if loop == 0:
             p1, p2 = tuple(line.split('/'))
-            print(green(p1) + grayscale[14]('/') + cyan(p2))
+            table_rows.append([p1, p2])
+            # print(green(p1) + grayscale[14]('/') + cyan(p2))
         else:
             pos = line.find(':')
-            print(grayscale[14](line[:pos + 1]) + red(line[pos + 1:]))
+            table_rows.append([line[:pos], line[pos + 1:]])
+            # print(grayscale[14](line[:pos + 1]) + red(line[pos + 1:]))
 
+    print(tabulate(table_rows, table_headers, tablefmt="fancy_grid"))
     print()
 
     # body

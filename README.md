@@ -15,6 +15,10 @@ To get `httpstat_hw_1`:
 
 - Clone the repository from github
 
+To obtain the 'tabulate' library for python, if you don't have it already (for more information: https://pypi.python.org/pypi/tabulate)
+
+- pip install tabulate
+
 
 ## Usage
 
