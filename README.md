@@ -1,22 +1,19 @@
-# httpstat
+# httpstat_hw_1 was originally cloned from https://github.com/reorx/httpstat. This repository alters the output, as required for Homework 1 of EC601.
 
-curl statistics made simple.
+httpstat_hw_1 is a **single file🌟** Python script that has **no dependency👏** and is compatible with **Python 3🍻**. We changed the file output from the original:
 
 ![screenshot](screenshot.png)
 
+to THIS (we feel it is much nicer):
 
-httpstat is a **single file🌟** Python script that has **no dependency👏** and is compatible with **Python 3🍻**.
+![screenshot](screenshot2.png)
 
 
 ## Installation
 
-There are three ways to get `httpstat`:
+To get `httpstat_hw_1`:
 
-- Download the script directly: `wget https://raw.githubusercontent.com/reorx/httpstat/master/httpstat.py`
-
-- Install through pip: `pip install httpstat`
-
-- Install through homebrew (macOS only): `brew install httpstat`
+- Clone the repository from github
 
 
 ## Usage
