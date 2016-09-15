@@ -202,14 +202,13 @@ def main():
     for loop, line in enumerate(headers.split('\n')):
         if loop == 0:
             p1, p2 = tuple(line.split('/'))
-            table_rows.append([p1, p2])
-            # print(green(p1) + grayscale[14]('/') + cyan(p2))
+            table_rows.append([green(p1), cyan(p2)])
         else:
             pos = line.find(':')
-            table_rows.append([line[:pos], line[pos + 1:]])
-            # print(grayscale[14](line[:pos + 1]) + red(line[pos + 1:]))
+            table_rows.append([grayscale[14](line[:pos]), red(line[pos + 2:])])
 
-    print(tabulate(table_rows, table_headers, tablefmt="fancy_grid"))
+    print(tabulate(table_rows, table_headers, tablefmt="rst"))
+
     print()
 
     # body
