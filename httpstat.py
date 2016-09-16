@@ -40,7 +40,6 @@ curl_format = """{
 }"""
 
 https_template = """
-
     |
     |   DNS lookup
     |   {a0000}
@@ -80,7 +79,6 @@ total:{b0004}
 
 
 http_template = """ 
-
     |   DNS lookup
     |   {a0000}
     |           
@@ -104,10 +102,6 @@ starttransfer:{b0003}
 
 total:{b0004} 
 
-<<<<<<< HEAD
-=======
-]
->>>>>>> master
 """[1:]
 
 
