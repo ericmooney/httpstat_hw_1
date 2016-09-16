@@ -40,7 +40,7 @@ curl_format = """{
 }"""
 
 https_template = """
-[
+
     |
     |   DNS lookup
     |   {a0000}
@@ -79,9 +79,8 @@ total:{b0004}
 
 
 
-http_template = """
- [
-    
+http_template = """ 
+
     |   DNS lookup
     |   {a0000}
     |           
@@ -105,7 +104,10 @@ starttransfer:{b0003}
 
 total:{b0004} 
 
+<<<<<<< HEAD
+=======
 ]
+>>>>>>> master
 """[1:]
 
 
@@ -253,7 +255,12 @@ def main():
             table_rows.append([red(p1), green(p2)])
         else:
             pos = line.find(':')
-            table_rows.append([grayscale[14](line[:pos]), blue(line[pos + 2:])])
+            if len(line[pos + 2:]) > 100:
+                detail = line[pos + 2:102]
+            else:
+                detail = line[pos + 2:]
+
+            table_rows.append([grayscale[14](line[:pos]), blue(detail)])
 
     print(tabulate(table_rows, table_headers, tablefmt="rst"))
 
