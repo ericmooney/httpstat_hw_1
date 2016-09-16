@@ -40,67 +40,59 @@ curl_format = """{
 }"""
 
 https_template = """
-    |
-    |   DNS lookup
-    |   {a0000}
-    |           
-   
-namelookup:{b0000}
-  
-    |   TCP Connection        
-    |    {a0001}  
-    |
-    | 
-connect:{b0001} 
-              
-    |    SSL Handshake    
-    |     {a0002} 
-    |
-    |       
-pretransfer:{b0002} 
-          
-    |   Server Processing
-    |    {a0003} 
-    |
-    |          
-starttransfer:{b0003}  
-            
-    |   Content Transfer
-    |    {a0004} 
-    |
-    |  
-total:{b0004}    
+           START:
+               |
+               |   DNS lookup
+               |   ({a0000})
+               |
+namelookup    {b0000}
+               |
+               |   TCP Connection
+               |   ({a0001})
+               |
+connect       {b0001}
+               |
+               |   SSL Handshake
+               |   ({a0002})
+               |
+pretransfer   {b0002}
+               |
+               |   Server Processing
+               |   ({a0003})
+               |
+starttransfer {b0003}
+               |
+               |   Content Transfer
+               |   ({a0004})
+               |
+       TOTAL: {b0004}
 
-]
-                                                        
 """[1:]
 
 
 
-
-http_template = """ 
-    |   DNS lookup
-    |   {a0000}
-    |           
-   
-namelookup:{b0000}
-  
-    |   TCP Connection        
-    |    {a0001}  
-    |
-    | 
-connect:{b0001} 
-                               
-    |   Server Processing
-    |    {a0003} 
-    |         
-starttransfer:{b0003}  
-            
-    |   Content Transfer
-    |    {a0004} 
-    |
-
-total:{b0004} 
+http_template = """
+           START:
+               |
+               |   DNS lookup
+               |   ({a0000})
+               |
+namelookup    {b0000}
+               |
+               |   TCP Connection
+               |   ({a0001})
+               |
+connect       {b0001}
+               |
+               |   Server Processing
+               |   ({a0003})
+               |
+starttransfer {b0003}
+               |
+               |   Content Transfer
+               |   ({a0004})
+               |
+       TOTAL: {b0004}
 
 """[1:]
 
