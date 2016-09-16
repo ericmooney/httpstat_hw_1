@@ -72,6 +72,7 @@ starttransfer:{b0003}
     |  
 total:{b0004}    
 
+]
                                                         
 """[1:]
 
@@ -103,6 +104,10 @@ starttransfer:{b0003}
 
 total:{b0004} 
 
+<<<<<<< HEAD
+=======
+]
+>>>>>>> master
 """[1:]
 
 
@@ -247,7 +252,7 @@ def main():
     for loop, line in enumerate(headers.split('\n')):
         if loop == 0:
             p1, p2 = tuple(line.split('/'))
-            table_rows.append([green(p1), cyan(p2)])
+            table_rows.append([red(p1), green(p2)])
         else:
             pos = line.find(':')
             if len(line[pos + 2:]) > 100:
@@ -255,7 +260,7 @@ def main():
             else:
                 detail = line[pos + 2:]
 
-            table_rows.append([grayscale[14](line[:pos]), red(detail)])
+            table_rows.append([grayscale[14](line[:pos]), blue(detail)])
 
     print(tabulate(table_rows, table_headers, tablefmt="rst"))
 
@@ -287,10 +292,10 @@ def main():
     template = '\n'.join(tpl_parts)
 
     def fmta(s):
-        return cyan('{:^7}'.format(str(s) + 'ms'))
+        return magenta('{:^7}'.format(str(s) + 'ms'))
 
     def fmtb(s):
-        return cyan('{:<7}'.format(str(s) + 'ms'))
+        return magenta('{:<7}'.format(str(s) + 'ms'))
 
     stat = template.format(
         # a
